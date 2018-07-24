@@ -23,24 +23,24 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 ### ROS1,ROS2 and OpenCV 3.X
 
 * Install ROS1 Kinetic ([guide](wiki.ros.org/kinetic/Installation/Ubuntu))
-* Install ROS2 Ardent ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
+* Install ROS2 Bouncy  ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
 * Install OpenCV 3.X([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
 
 ### Installation Instructions
 
-* **1.Install the Intel® RealSense™ SDK 2.0**\\
+* **1. Install the Intel® RealSense™ SDK 2.0**\\
 Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).\\
 **Note:** Use `git checkout v2.9.1` to switch to the v2.9.1 branch.
-* **2.Install ROS1 Kinetic**\\
+* **2. Install ROS1 Kinetic**\\
 [Ubuntu install of ROS Kinetic(**ros-kinetic-desktop-full**)](http://wiki.ros.org/kinetic/Installation/Ubuntu)
-* **3.Install ROS2 Bouncy**\\
+* **3. Install ROS2 Bouncy**\\
 [Ubuntu install of ROS Bouncy](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)\\
 Source the environment
 ```bash
 $ cd ~/ros2_ws
 $ source install/local_setup.bash
 ```
-* **4.Install [ros2 cv_bridge](https://github.com/ros-perception/vision_opencv/tree/ros2)**
+* **4. Install [ros2 cv_bridge](https://github.com/ros-perception/vision_opencv/tree/ros2)**
 ```bash
 # Creating a new ROS2 workspace 'ros2_overlay_ws' instead of using 'ros2_ws' is recommended
 $ mkdir -p ~/ros2_overlay_ws/src
@@ -53,7 +53,7 @@ $ colcon build --symlink-install
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
-* **5.Install [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)**
+* **5. Install [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)**
 ```bash
 
 # Goto the new ROS workspace step 4 created before
@@ -68,7 +68,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 $ sudo ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
 
 ```
-* **6.Install [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)**
+* **6. Install [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)**
 ```bash
 $ cd ~/ros2_overlay_ws/src
 # Clone the ros2_object_msgs repository and build use colcon
@@ -78,7 +78,7 @@ $ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install --packages-select object_msgs
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
-* **7.Install [ros2_message_filters](https://github.com/intel/ros2_message_filters)**
+* **7. Install [ros2_message_filters](https://github.com/intel/ros2_message_filters)**
 ```bash
 $ cd /usr/lib/x86_64-linux-gnu
 # Create a symbol link from libboost_python-py35.so to libboost_python3.so
@@ -91,7 +91,7 @@ $ colcon build --symlink-install --packages-select message_filters
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
-* **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
+* **8. Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
 ```bash
 # Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
 # create  workspace to install libraries ros2_intel_moidius_ncs relies on
