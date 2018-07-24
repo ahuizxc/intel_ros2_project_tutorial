@@ -4,13 +4,13 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 
 ## Package Lists
 
-* [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)
-* [ros2_message_filters](https://github.com/intel/ros2_message_filters)
-* [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)
-* [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)
-* [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)
-* [ros2_object_map](https://github.com/intel/ros2_object_map)
-* [ros2_moving_object](https://github.com/intel/ros2_moving_object)
+* ros2_intel_realsense[repo link](https://github.com/intel/ros2_intel_realsense)[details]()
+* ros2_message_filters[repo link](https://github.com/intel/ros2_message_filters)[details]()
+* ros2_object_msgs[repo link](https://github.com/intel/ros2_object_msgs)[details]()
+* ros2_intel_movidius_ncs[repo link](https://github.com/intel/ros2_intel_movidius_ncs)[details]()
+* ros2_object_analytics[repo link](https://github.com/intel/ros2_object_analytics)[details]()
+* ros2_object_map[repo link](https://github.com/intel/ros2_object_map)[details]()
+* ros2_moving_object[repo link](https://github.com/intel/ros2_moving_object)[details]()
 
 ## Dependencies
 
