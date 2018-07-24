@@ -93,7 +93,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 
 * **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
 
---8.1 Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
+-8.1 Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
 
 ```bash
 # create a new workspace to install libraries ros2_intel_moidius_ncs relies on
@@ -112,7 +112,7 @@ $ sudo make
 $ sudo ln -s ~/workspace/libraries/ncappzoo /opt/movidius/ncappzoo
 ```
 
---8.2 Install ros2_intel_movidius_ncs
+-8.2 Install ros2_intel_movidius_ncs
 ```bash
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_intel_movidius_ncs.git
