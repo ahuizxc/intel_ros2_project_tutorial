@@ -5,10 +5,10 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 ## Package Lists
 
 * [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)
-* [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)
-* [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)
 * [ros2_message_filters](https://github.com/intel/ros2_message_filters)
 * [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)
+* [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)
+* [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)
 * [ros2_object_map](https://github.com/intel/ros2_object_map)
 * [ros2_moving_object](https://github.com/intel/ros2_moving_object)
 
@@ -92,11 +92,9 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
 * **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
-
-8.1 Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
-
 ```bash
-# create a new workspace to install libraries ros2_intel_moidius_ncs relies on
+# Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
+# create  workspace to install libraries ros2_intel_moidius_ncs relies on
 $ mkdir -p ~/workspace/libraries
 $ cd ~/workspace/libraries
 # install ncsdk and ncappzoo
@@ -110,9 +108,9 @@ $ cd ~/workspace/libraries/ncappzoo/caffe/
 $ sudo make
 # NCSDK should be installed in /opt/movidius by default. Create a symbol link in /opt/movidius to NCAPPZOO
 $ sudo ln -s ~/workspace/libraries/ncappzoo /opt/movidius/ncappzoo
-```
-  8.2 Install ros2_intel_movidius_ncs
-```bash
+
+
+# Install ros2_intel_movidius_ncs
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_intel_movidius_ncs.git
 $ cd ~/ros2_overlay_ws
