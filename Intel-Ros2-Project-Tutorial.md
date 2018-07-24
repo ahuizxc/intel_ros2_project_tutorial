@@ -20,10 +20,11 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 * [Intel® RealSense™ Devices](https://realsense.intel.com/)  
 * [™ Neural Compute Stick](https://developer.movidius.com/)
 
-### ROS1 and ROS2
+### ROS1,ROS2 and OpenCV 3.X
 
 * Install ROS1 Kinetic ([guide](wiki.ros.org/kinetic/Installation/Ubuntu))
 * Install ROS2 Ardent ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
+* Install OpenCV 3.X([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
 
 ### Installation Instructions
 
@@ -85,10 +86,38 @@ $ sudo ln -s libboost_python-py35.so libboost_python3.so
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_message_filters.git
 $ cd ~/ros2_overlay_ws
+$ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install --packages-select message_filters
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
-* **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**\\
-**Note:** OpenCV 3.X([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html)) should installed before.\\
+* **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
+
+  1.Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo)
+
+```bash
+# create a new workspace to install libraries ros2_intel_moidius_ncs relies on
+$ mkdir -p ~/workspace/libraries
+$ cd ~/workspace/libraries
+# install ncsdk and ncappzoo
+$ git clone https://github.com/movidius/ncsdk.git
+$ git clone https://github.com/movidius/ncappzoo.git
+$ cd ~/workspace/libraries/ncsdk
+$ sudo make install
+$ export PYTHONPATH="${PYTHONPATH}:/opt/movidius/caffe/python"
+# Download and compile the object detection model
+$ cd ~/workspace/libraries/ncappzoo/caffe/SSD_MobileNet
+$ sudo make
+
+```bash
+$ cd ~/ros2_overlay_ws/src
+$ git clone https://github.com/intel/ros2_intel_movidius_ncs.git
+$ cd ~/ros2_overlay_ws
+$ source ~/ros2_ws/install/local_setup.bash
+$ colcon build --symlink-install --packages-select movidius_ncs_example
+$ source ~/ros2_overlay_ws/install/local_setup.bash
+```
+
+
+
  
