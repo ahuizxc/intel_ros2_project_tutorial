@@ -28,7 +28,8 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 ### Installation Instructions
 
 * **1.Install the Intel® RealSense™ SDK 2.0**\\
-Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).
+Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).\\
+**Note:** Use `git checkout v2.9.1` to switch to the v2.9.1 branch.
 * **2.Install ROS1 Kinetic**\\
 [Ubuntu install of ROS Kinetic(**ros-kinetic-desktop-full**)](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * **3.Install ROS2 Bouncy**\\
@@ -49,4 +50,14 @@ $ cd ~/myros2_ws
 $ colcon build --symlink-install
 ```
 
+* **5.Install Intel® RealSense™ ROS2 from Sources**
+```bash
+# Goto the new ROS workspace step 4 created before
+$ cd ~/myros2_ws/src
+# Clone the latest Intel® RealSense™ ROS2 repository
+$ git clone https://github.com/intel/ros2_intel_realsense.git
+$ cd ~/myros2_ws
+$ colcon build --symlink-install --packages-select realsense_camera_msgs realsense_ros2_camera
+$ source ./install/local_setup.bash
+```
 
