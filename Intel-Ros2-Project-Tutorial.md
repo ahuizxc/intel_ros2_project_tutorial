@@ -93,7 +93,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 
 * **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
 
-  1.Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo)
+--8.1 Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
 
 ```bash
 # create a new workspace to install libraries ros2_intel_moidius_ncs relies on
@@ -106,15 +106,19 @@ $ cd ~/workspace/libraries/ncsdk
 $ sudo make install
 $ export PYTHONPATH="${PYTHONPATH}:/opt/movidius/caffe/python"
 # Download and compile the object detection model
-$ cd ~/workspace/libraries/ncappzoo/caffe/SSD_MobileNet
+$ cd ~/workspace/libraries/ncappzoo/caffe/
 $ sudo make
+# NCSDK should be installed in /opt/movidius by default. Create a symbol link in /opt/movidius to NCAPPZOO
+$ sudo ln -s ~/workspace/libraries/ncappzoo /opt/movidius/ncappzoo
+```
 
+--8.2 Install ros2_intel_movidius_ncs
 ```bash
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_intel_movidius_ncs.git
 $ cd ~/ros2_overlay_ws
 $ source ~/ros2_ws/install/local_setup.bash
-$ colcon build --symlink-install --packages-select movidius_ncs_example
+$ colcon build --symlink-install --packages-select movidius_ncs_example  movidius_ncs_image  movidius_ncs_launch  movidius_ncs_lib  movidius_ncs_stream
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
