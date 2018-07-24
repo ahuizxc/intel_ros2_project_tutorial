@@ -55,7 +55,6 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 
 * **5. Install [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)**
 ```bash
-
 # Goto the new ROS workspace step 4 created before
 $ cd ~/ros2_overlay_ws/src
 # Clone the latest Intel® RealSense™ ROS2 repository and build use colcon 
@@ -137,5 +136,6 @@ $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_object_analytics.git
 $ cd ..
 $ colcon build --symlink-install --packages-select object_analytics_launch  object_analytics_node object_analytics_msgs object_analytics_rviz
+```
 
  
