@@ -89,6 +89,6 @@ $ colcon build --symlink-install --packages-select message_filters
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
-* **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
+* **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**\\
 **Note:** OpenCV 3.X([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html)) should installed before.\\
  
