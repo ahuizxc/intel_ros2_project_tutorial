@@ -111,7 +111,8 @@ $ sudo make
 # NCSDK should be installed in /opt/movidius by default. Create a symbol link in /opt/movidius to NCAPPZOO
 $ sudo ln -s ~/workspace/libraries/ncappzoo /opt/movidius/ncappzoo
 ```
-    8.2 Install ros2_intel_movidius_ncs
+        8.2 Install ros2_intel_movidius_ncs
+
 ```bash
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_intel_movidius_ncs.git
