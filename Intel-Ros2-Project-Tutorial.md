@@ -4,7 +4,7 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 
 ## Package Lists
 
-* ros2_intel_realsense [[repo link](https://github.com/intel/ros2_intel_realsense)][[details]()]
+* ros2_intel_realsense [[repo link](https://github.com/intel/ros2_intel_realsense)][[details](https://github.com/ahuizxc/intel_ros2_project_tutorial/edit/master/Intel-Ros2-Project-Tutorial.md)]
 * ros2_message_filters [[repo link](https://github.com/intel/ros2_message_filters)][[details]()]
 * ros2_object_msgs [[repo link](https://github.com/intel/ros2_object_msgs)][[details]()]
 * ros2_intel_movidius_ncs [[repo link](https://github.com/intel/ros2_intel_movidius)][[details]()]
