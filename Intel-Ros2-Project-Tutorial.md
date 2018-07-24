@@ -106,6 +106,8 @@ $ export PYTHONPATH="${PYTHONPATH}:/opt/movidius/caffe/python"
 # Download and compile the object detection model
 $ cd ~/workspace/libraries/ncappzoo/caffe/
 $ sudo make
+$ cd ~/workspace/libraries/ncappzoo/tensorflow/
+$ sudo make
 # NCSDK should be installed in /opt/movidius by default. Create a symbol link in /opt/movidius to NCAPPZOO
 $ sudo ln -s ~/workspace/libraries/ncappzoo /opt/movidius/ncappzoo
 
@@ -118,7 +120,22 @@ $ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install --packages-select movidius_ncs_example  movidius_ncs_image  movidius_ncs_launch  movidius_ncs_lib  movidius_ncs_stream
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
+* **9. Install [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)**
 
+```bash
+# Install pcl_conversions package at first
+$ cd ~/ros2_ws/src
+$ git clone https://github.com/ros2/pcl_conversions.git
+$ cd pcl_conversions
+$ git checkout bouncy
+$ cd ~/ros2_ws
+$ source ~/ros2_ws/install/local_setup.bash
+$ colcon build --symlink-install --packages-select pcl_conversions
 
+# Install ros2_object_analytics
+$ cd ~/ros2_overlay_ws/src
+$ git clone https://github.com/intel/ros2_object_analytics.git
+$ cd ..
+$ colcon build --symlink-install --packages-select object_analytics_launch  object_analytics_node object_analytics_msgs object_analytics_rviz
 
  
