@@ -41,23 +41,53 @@ $ source install/local_setup.bash
 ```
 * **4.Install [ros2 cv_bridge](https://github.com/ros-perception/vision_opencv/tree/ros2)**
 ```bash
-# Creating a new ROS2 workspace is recommended
-$ mkdir -p ~/myros2_ws/src
-$ cd ~/myros2_ws/src
+# Creating a new ROS2 workspace 'ros2_overlay_ws' instead of using 'ros2_ws' is recommended
+$ mkdir -p ~/ros2_overlay_ws/src
+$ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/ros-perception/vision_opencv.git
 $ git checkout ros2
-$ cd ~/myros2_ws
+$ cd ~/ros2_overlay_ws
+$ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install
+$ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
-* **5.Install Intel® RealSense™ ROS2 from Sources**
+* **5.Install [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)**
 ```bash
-# Goto the new ROS workspace step 4 created before
-$ cd ~/myros2_ws/src
-# Clone the latest Intel® RealSense™ ROS2 repository
-$ git clone https://github.com/intel/ros2_intel_realsense.git
-$ cd ~/myros2_ws
-$ colcon build --symlink-install --packages-select realsense_camera_msgs realsense_ros2_camera
-$ source ./install/local_setup.bash
-```
 
+# Goto the new ROS workspace step 4 created before
+$ cd ~/ros2_overlay_ws/src
+# Clone the latest Intel® RealSense™ ROS2 repository and build use colcon 
+$ git clone https://github.com/intel/ros2_intel_realsense.git
+$ cd ~/ros2_overlay_ws
+$ source ~/ros2_ws/install/local_setup.bash
+$ colcon build --symlink-install --packages-select realsense_camera_msgs realsense_ros2_camera
+$ source ~/ros2_overlay_ws/install/local_setup.bash
+# Create a symbol link from libusb.a to libusb-1.0.a, otherwise "libusb.a" is probably not to be found by librealsense
+$ sudo ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
+
+```
+* **6.Install [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)**
+```bash
+$ cd ~/ros2_overlay_ws/src
+# Clone the ros2_object_msgs repository and build use colcon
+$ git clone https://github.com/intel/ros2_object_msgs.git
+$ cd ~/ros2_overlay_ws
+$ source ~/ros2_ws/install/local_setup.bash
+$ colcon build --symlink-install --packages-select object_msgs
+$ source ~/ros2_overlay_ws/install/local_setup.bash
+```
+* **7.Install [ros2_message_filters](https://github.com/intel/ros2_message_filters)**
+```bash
+$ cd /usr/lib/x86_64-linux-gnu
+$ sudo ln -s libboost_python-py35.so libboost_python3.so
+$ cd ~/ros2_overlay_ws/src
+$ git clone https://github.com/intel/ros2_message_filters.git
+$ cd ~/ros2_overlay_ws
+$ colcon build --symlink-install --packages-select message_filters
+$ source ~/ros2_overlay_ws/install/local_setup.bash
+
+
+* **8.Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
+**Note:** OpenCV 3.X([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html)) should installed before.\\
+ 
