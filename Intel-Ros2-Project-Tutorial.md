@@ -110,7 +110,7 @@ $ cd ~/workspace/libraries/ncappzoo/caffe/
 $ sudo make
 # NCSDK should be installed in /opt/movidius by default. Create a symbol link in /opt/movidius to NCAPPZOO
 $ sudo ln -s ~/workspace/libraries/ncappzoo /opt/movidius/ncappzoo
-```bash
+bash```
 
         8.2 Install ros2_intel_movidius_ncs
 
