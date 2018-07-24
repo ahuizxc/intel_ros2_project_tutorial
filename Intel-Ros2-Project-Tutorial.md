@@ -135,7 +135,27 @@ $ colcon build --symlink-install --packages-select pcl_conversions
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_object_analytics.git
 $ cd ..
+$ source ~/ros2_ws/install/local_setup.bash 
 $ colcon build --symlink-install --packages-select object_analytics_launch  object_analytics_node object_analytics_msgs object_analytics_rviz
+$ source ~/ros2_overlay_ws/install/local.setup.bash
 ```
 
- 
+* **9. Install [ros2_object_map](https://github.com/intel/ros2_object_map)**
+```bash
+$ cd ~/ros2_overlay_ws/src
+$ git clone https://github.com/intel/ros2_object_map.git
+$ cd ..
+$ source ~/ros2_ws/install/local_setup.bash
+$ colcon build --symlink-install --packages-select object_map object_map_msgs
+$ source ~/ros2_overlay_ws/install/local.setup.bash
+```
+
+* **10. Install [ros2_moving_object](https://github.com/intel/ros2_moving_object)**
+```bash
+$ cd ~/ros2_overlay_ws/src
+$ git clone https://github.com/intel/ros2_moving_object.git
+$ cd ..
+$ source ~/ros2_ws/install/local_setup.bash
+$ colcon build --symlink-install --packages-select moving_object moving_object_msgs
+$ source ~/ros2_overlay_ws/install/local.setup.bash
+```
