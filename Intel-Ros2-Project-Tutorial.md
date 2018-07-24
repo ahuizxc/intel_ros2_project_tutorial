@@ -30,9 +30,9 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 
 * **1. Install the Intel® RealSense™ SDK 2.0**
 
-Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).
+    Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).
 
-**Note:** Use `git checkout v2.9.1` to switch to the v2.9.1 branch.
+    **Note:** Use `git checkout v2.9.1` to switch to the v2.9.1 branch.
 
 * **2. Install ROS1 Kinetic**
 
