@@ -119,8 +119,8 @@ $ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install --packages-select movidius_ncs_example  movidius_ncs_image  movidius_ncs_launch  movidius_ncs_lib  movidius_ncs_stream
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
-* **9. Install [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)**
 
+* **9. Install [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)**
 ```bash
 # Install pcl_conversions package at first
 $ cd ~/ros2_ws/src
