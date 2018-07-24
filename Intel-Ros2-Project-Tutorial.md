@@ -36,13 +36,13 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 
 * **2. Install ROS1 Kinetic**
 
-[Ubuntu install of ROS Kinetic(**ros-kinetic-desktop-full**)](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+    [Ubuntu install of ROS Kinetic(**ros-kinetic-desktop-full**)](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
 * **3. Install ROS2 Bouncy**
 
-[Ubuntu install of ROS Bouncy](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)
+    [Ubuntu install of ROS Bouncy](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)
 
-Source the environment
+    Source the environment
 ```bash
 $ cd ~/ros2_ws
 $ source install/local_setup.bash
