@@ -4,13 +4,13 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 
 ## Package Lists
 
-* [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)
-* [ros2_message_filters](https://github.com/intel/ros2_message_filters)
-* [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)
-* [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)
-* [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)
-* [ros2_object_map](https://github.com/intel/ros2_object_map)
-* [ros2_moving_object](https://github.com/intel/ros2_moving_object)
+* ros2_intel_realsense [[repo link](https://github.com/intel/ros2_intel_realsense)][[details]()]
+* ros2_message_filters [[repo link](https://github.com/intel/ros2_message_filters)][[details]()]
+* ros2_object_msgs [[repo link](https://github.com/intel/ros2_object_msgs)][[details]()]
+* ros2_intel_movidius_ncs [[repo link](https://github.com/intel/ros2_intel_movidius)][[details]()]
+* ros2_object_analytics [[repo link](https://github.com/intel/ros2_object_analytics)][[details]()]
+* ros2_object_map [[repo link](https://github.com/intel/ros2_object_map)][[details]()]
+* ros2_moving_object [[repo link](https://github.com/intel/ros2_moving_object)][[details]()]
 
 ## Dependencies
 
@@ -20,22 +20,29 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 * [Intel® RealSense™ Devices](https://realsense.intel.com/)  
 * [™ Neural Compute Stick](https://developer.movidius.com/)
 
-### ROS1,ROS2 and OpenCV 3.X
+### ROS1,ROS2 and OpenCV 3.x
 
 * Install ROS1 Kinetic ([guide](wiki.ros.org/kinetic/Installation/Ubuntu))
 * Install ROS2 Bouncy  ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
-* Install OpenCV 3.X([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
+* Install OpenCV 3.x([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
 
 ### Installation Instructions
 
-* **1. Install the Intel® RealSense™ SDK 2.0**\\
-Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).\\
-**Note:** Use `git checkout v2.9.1` to switch to the v2.9.1 branch.
-* **2. Install ROS1 Kinetic**\\
-[Ubuntu install of ROS Kinetic(**ros-kinetic-desktop-full**)](http://wiki.ros.org/kinetic/Installation/Ubuntu)
-* **3. Install ROS2 Bouncy**\\
-[Ubuntu install of ROS Bouncy](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)\\
-Source the environment
+* **1. Install the Intel® RealSense™ SDK 2.0**
+
+    Install tag v2.9.1 [Intel&reg; RealSense&trade; SDK 2.0](https://github.com/IntelRealSense/librealsense/tree/v2.9.1) and follow the instructions under [Linux Installation](https://github.com/IntelRealSense/librealsense/blob/v2.9.1/doc/installation.md).
+
+    **Note:** Use `git checkout v2.9.1` to switch to the v2.9.1 branch.
+
+* **2. Install ROS1 Kinetic**
+
+    [Ubuntu install of ROS Kinetic(**ros-kinetic-desktop-full**)](http://wiki.ros.org/kinetic/Installation/Ubuntu)
+
+* **3. Install ROS2 Bouncy**
+
+    [Ubuntu install of ROS Bouncy](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)
+
+    Source the environment
 ```bash
 $ cd ~/ros2_ws
 $ source install/local_setup.bash
@@ -92,7 +99,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 
 * **8. Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
 ```bash
-# Install [NCSDK 1.X](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
+# Install [NCSDK 1.x](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
 # create  workspace to install libraries ros2_intel_moidius_ncs relies on
 $ mkdir -p ~/workspace/libraries
 $ cd ~/workspace/libraries
@@ -159,3 +166,22 @@ $ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install --packages-select moving_object moving_object_msgs
 $ source ~/ros2_overlay_ws/install/local.setup.bash
 ```
+
+## License
+Copyright 2018 Intel Corporation
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this project except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+**Other names and brands may be claimed as the property of others*
+
+Any security issue should be reported using process at https://01.org/security
