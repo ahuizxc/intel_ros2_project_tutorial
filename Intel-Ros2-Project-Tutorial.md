@@ -80,6 +80,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 * **7.Install [ros2_message_filters](https://github.com/intel/ros2_message_filters)**
 ```bash
 $ cd /usr/lib/x86_64-linux-gnu
+# Create a symbol link from libboost_python-py35.so to libboost_python3.so
 $ sudo ln -s libboost_python-py35.so libboost_python3.so
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_message_filters.git
