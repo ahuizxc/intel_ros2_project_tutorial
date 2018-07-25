@@ -75,6 +75,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
 * **5. Install [ros2_intel_realsense](https://github.com/intel/ros2_intel_realsense)**
+
 ```bash
 # Goto the new ROS workspace step 4 created before
 $ cd ~/ros2_overlay_ws/src
