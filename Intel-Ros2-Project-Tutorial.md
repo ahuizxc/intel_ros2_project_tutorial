@@ -26,8 +26,8 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 ### ROS1,ROS2 and OpenCV 3.x
 
 * Install ROS1 Kinetic ([guide](wiki.ros.org/kinetic/Installation/Ubuntu))
-* Install ROS2 Bouncy  ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
-* Install OpenCV 3.x([guid](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
+* Install ROS2 Bouncy ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
+* Install OpenCV 3.x([guide](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
 
 ### Installation Instructions
 
@@ -46,11 +46,14 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
     [Ubuntu install of ROS Bouncy](https://github.com/ros2/ros2/wiki/Linux-Development-Setup)
 
     Source the environment
+
 ```bash
 $ cd ~/ros2_ws
 $ source install/local_setup.bash
 ```
+
 * **4. Install [ros2 cv_bridge](https://github.com/ros-perception/vision_opencv/tree/ros2)**
+
 ```bash
 # Creating a new ROS2 workspace 'ros2_overlay_ws' instead of using 'ros2_ws' is recommended
 $ mkdir -p ~/ros2_overlay_ws/src
@@ -77,7 +80,9 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 $ sudo ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
 
 ```
+
 * **6. Install [ros2_object_msgs](https://github.com/intel/ros2_object_msgs)**
+
 ```bash
 $ cd ~/ros2_overlay_ws/src
 # Clone the ros2_object_msgs repository and build use colcon
@@ -87,7 +92,9 @@ $ source ~/ros2_ws/install/local_setup.bash
 $ colcon build --symlink-install --packages-select object_msgs
 $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
+
 * **7. Install [ros2_message_filters](https://github.com/intel/ros2_message_filters)**
+
 ```bash
 $ cd /usr/lib/x86_64-linux-gnu
 # Create a symbol link from libboost_python-py35.so to libboost_python3.so
@@ -101,6 +108,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
 * **8. Install [ros2_intel_movidius_ncs](https://github.com/intel/ros2_intel_movidius_ncs)**
+
 ```bash
 # Install [NCSDK 1.x](https://github.com/movidius/ncsdk) and [NCAPPZOO](https://github.com/movidius/ncappzoo) at first
 # create  workspace to install libraries ros2_intel_moidius_ncs relies on
@@ -131,6 +139,7 @@ $ source ~/ros2_overlay_ws/install/local_setup.bash
 ```
 
 * **9. Install [ros2_object_analytics](https://github.com/intel/ros2_object_analytics)**
+
 ```bash
 # Install pcl_conversions package at first
 $ cd ~/ros2_ws/src
@@ -151,6 +160,7 @@ $ source ~/ros2_overlay_ws/install/local.setup.bash
 ```
 
 * **10. Install [ros2_object_map](https://github.com/intel/ros2_object_map)**
+
 ```bash
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_object_map.git
@@ -161,6 +171,7 @@ $ source ~/ros2_overlay_ws/install/local.setup.bash
 ```
 
 * **11. Install [ros2_moving_object](https://github.com/intel/ros2_moving_object)**
+
 ```bash
 $ cd ~/ros2_overlay_ws/src
 $ git clone https://github.com/intel/ros2_moving_object.git
@@ -171,6 +182,7 @@ $ source ~/ros2_overlay_ws/install/local.setup.bash
 ```
 
 ## License
+
 Copyright 2018 Intel Corporation
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -187,4 +199,4 @@ limitations under the License.
 
 **Other names and brands may be claimed as the property of others*
 
-Any security issue should be reported using process at https://01.org/security
+###### Any security issue should be reported using process at https://01.org/security
