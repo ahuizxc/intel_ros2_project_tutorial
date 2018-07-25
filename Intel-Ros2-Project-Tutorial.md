@@ -37,7 +37,7 @@ Intel Ros2 Project contains several ROS2 packages in object classification, dete
 * Install ROS2 Bouncy ([guide](https://github.com/ros2/ros2/wiki/Linux-Install-Debians))
 * Install OpenCV 3.x([guide](https://docs.opencv.org/3.3.0/d7/d9f/tutorial_linux_install.html))
 
-### Installation Instructions
+## Installation Instructions
 
 * **1. Install the Intel® RealSense™ SDK 2.0**
 
