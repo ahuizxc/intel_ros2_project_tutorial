@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "Begin installing....."
-sudo apt-get install git
+sudo apt-get update
+sudo apt-get install -y git cmake
 sudo apt-get install -y libusb-1.0.0-dev pkg-config libgtk-3-dev libglfw3-dev libudev-dev
 cd /usr/local/lib
 
