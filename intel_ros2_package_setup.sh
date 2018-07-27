@@ -6,12 +6,12 @@ sudo apt-get install -y libusb-1.0.0-dev pkg-config libgtk-3-dev libglfw3-dev li
 cd /usr/local/lib
 
 
-if [ -e "librealsense2.so.2.9.1"]
+if [ -e "librealsense2.so.2.9.1" ]
 then
     echo "librealsense 2.9.1 has been installed"
     sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
     sudo udevadm control --reload-rules
-elif [ -e "librealsense2.so"]
+elif [ -e "librealsense2.so" ]
 then
     echo "librealsense's version doesn't match"
     sudo rm -rf librealsense*
@@ -46,7 +46,7 @@ fi
 
 
 cd ~
-if [ -x "/usr/local/lib/mvnc"]
+if [ -x "/usr/local/lib/mvnc" ]
 then
     echo "NCSDK has been installed"
 else 
@@ -76,7 +76,7 @@ fi
 echo "checking OpenCV"
 check_opencv= pkg-config --modversion opencv
 
-if [${check_opencv:0:1}="3"]
+if [ ${check_opencv:0:1} = "3" ]
 then 
     echo "OpenCV 3.x already exist"
 else
