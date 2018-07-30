@@ -5,6 +5,10 @@ sudo apt-get install -y git cmake
 sudo apt-get install -y libusb-1.0.0-dev pkg-config libgtk-3-dev libglfw3-dev libudev-dev
 cd /usr/local/lib
 
+mkdir -p ~/.pip
+sudo -S mkdir -p /root/.pip
+cp ./config/pip.conf ~/.pip
+sudo -S cp ./config/pip.conf /root/.pip
 
 if [ -e "librealsense2.so.2.9.1" ]
 then
@@ -74,10 +78,10 @@ fi
 
 
 echo "checking OpenCV"
-check_opencv= pkg-config --modversion opencv
+check_opencv=$(pkg-config --modversion opencv)
 
 if [ ${check_opencv:0:1} = "3" ]
-then 
+then
     echo "OpenCV 3.x already exist"
 else
     echo "OpenCV 3.x has not been installed, installing..."
@@ -86,14 +90,15 @@ else
     sudo git clone https://github.com/opencv/opencv_contrib.git
     cd ~/intel_ros2_project_tutorial
     sudo mkdir ~/workspace/intel_ros_libraries/opencv/.cache/ippicv/ -p
-    sudo mv ippicv_2017u2_lnx_intel64_20170418.tgz ~/workspace/intel_ros_libraries/opencv/.cache/ippicv/87cbdeb627415d8e4bc811156289fa3a-ippicv_2017u2_lnx_intel64_20170418.tgz
+    sudo cp ippicv_2017u2_lnx_intel64_20170418.tgz ~/workspace/intel_ros_libraries/opencv/.cache/ippicv/87cbdeb627415d8e4bc811156289fa3a-ippicv_2017u2_lnx_intel64_20170418.tgz
     cd ~/workspace/intel_ros_libraries/opencv
     git checkout 3.3.0
     cd ~/workspace/intel_ros_libraries/opencv_contrib
     git checkout 3.3.0
     cd ~/workspace/intel_ros_libraries/opencv
+    sudo rm -rf build
     mkdir build && cd build
-    cmake -DOPENCV_EXTRA_MODULES_PATH=/home/$USER/workspace/intel_ros_libraries/opencv_contrib/modules -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_opencv_cnn_3dobj=OFF ..
+    cmake -DOPENCV_EXTRA_MODULES_PATH=~/workspace/intel_ros_libraries/opencv_contrib/modules -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_opencv_cnn_3dobj=OFF ..
     make -j4
     sudo make install
     sudo ldconfig
@@ -154,15 +159,12 @@ else
 fi
 
 echo "Installing ros2 bouncy..."
+pip3 install -U setuptools
 mkdir -p ~/ros2_ws_bk/src
 cd ~/ros2_ws_bk
 wget https://raw.githubusercontent.com/ros2/ros2/master/ros2.repos
 vcs-import src < ros2.repos
-cd ~/ros2_ws_bk/src
-git clone https://github.com/ros2/pcl_conversions.git
-cd pcl_conversions
-git checkout bouncy
-cd ..
+cd src
 git clone https://github.com/ros-perception/vision_opencv.git
 cd ~/ros2_ws_bk/src/vision_opencv
 git checkout ros2
@@ -176,6 +178,9 @@ echo "Intel ros packages will be installed in ~/ros2_overlay_ws"
 sudo mkdir -p ~/ros2_overlay_ws/src
 cd ~/ros2_overlay_ws/src
 
+git clone https://github.com/ros2/pcl_conversions.git
+cd pcl_conversions
+git checkout bouncy
 
 echo "Installing ros2_intel_realsense..."
 cd ~/ros2_overlay_ws/src
