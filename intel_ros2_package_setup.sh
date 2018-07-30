@@ -84,8 +84,7 @@ else
     cd ~/workspace/intel_ros_libraries
     sudo git clone https://github.com/opencv/opencv.git
     sudo git clone https://github.com/opencv/opencv_contrib.git
-    cd ~/Desktop
-    wget https://raw.githubusercontent.com/opencv/opencv_3rdparty/a62e20676a60ee0ad6581e217fe7e4bada3b95db/ippicv/ippicv_2017u2_lnx_intel64_20170418.tgz
+    cd ~/intel_ros2_project_tutorial
     sudo mkdir ~/workspace/intel_ros_libraries/opencv/.cache/ippicv/ -p
     sudo mv ippicv_2017u2_lnx_intel64_20170418.tgz ~/workspace/intel_ros_libraries/opencv/.cache/ippicv/87cbdeb627415d8e4bc811156289fa3a-ippicv_2017u2_lnx_intel64_20170418.tgz
     cd ~/workspace/intel_ros_libraries/opencv
@@ -94,7 +93,7 @@ else
     git checkout 3.3.0
     cd ~/workspace/intel_ros_libraries/opencv
     mkdir build && cd build
-    cmake -DOPENCV_EXTRA_MODULES_PATH=~/workspace/intel_ros_libraries/opencv_contrib/modules -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_opencv_cnn_3dobj=OFF ..
+    cmake -DOPENCV_EXTRA_MODULES_PATH=/home/$USER/workspace/intel_ros_libraries/opencv_contrib/modules -DCMAKE_INSTALL_PREFIX=/usr/local -DBUILD_opencv_cnn_3dobj=OFF ..
     make -j4
     sudo make install
     sudo ldconfig
@@ -190,6 +189,7 @@ source ~/ros2_overlay_ws/install/local_setup.bash
 sudo ln -s /usr/lib/x86_64-linux-gnu/libusb-1.0.a /usr/lib/libusb.a
 echo "Done..."
 
+
 echo "Installing ros2_object_msgs..."
 cd ~/ros2_overlay_ws/src
 # Clone the ros2_object_msgs repository and build use colcon
@@ -242,7 +242,7 @@ git clone https://github.com/intel/ros2_moving_object.git
 cd ..
 source ~/ros2_ws/install/local_setup.bash
 colcon build --symlink-install --packages-select moving_object moving_object_msgs
-source ~/ros2_overlay_ws/install/local.setup.bash
+source ~/ros2_overlay_ws/install/local_setup.bash
 echo "Done..."
 
 "Installation done!"
